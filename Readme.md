@@ -3,8 +3,10 @@ tags: cssi, javascript, jquery
 level: 2
 languages: javascript
 ---
+
 # Events, Listeners, and Handlers in JQuery
-###Objectives
+
+### Objectives
 + Understand what constitutes an event
 + Attach jQuery event handlers (like 'click') to HTML elements
 + Add callback functions to event handlers
@@ -12,12 +14,12 @@ languages: javascript
 + Understand how to chain jQuery methods
 + Use the jQuery documentation as a resource
 
-###Motivation / Why Should You Care?
+### Motivation / Why Should You Care?
 
 jQuery has event handlers that respond to user actions - like clicking or moving the mouse. This allows us to make all sorts of amazing behaviors and websites that respond naturally to user actions.
 
 
-##JavaScript Events
+## JavaScript Events
 In JavaScript, events are user actions such as mouse clicks, key presses, or window resizing. We can define code that will be run when those events happen.
 
 JavaScript allows us to bind - or connect - functions to particular events. We create a function, and then tell the browser to run that function whenever that event happens. 
@@ -39,10 +41,11 @@ Javascript gives us a few different ways to create the 'action', by using a name
 We can define a named method. Then we can pass that method as a parameter when we call the event:
 
 ```js
-  function tellUsWeClicked () {
-	alert("You clicked a header");
+function tellUsWeClicked () {
+    alert("You clicked a header");
 }
-    $("h1").click(tellUsWeClicked);
+
+$("h1").click(tellUsWeClicked);
 ```    
 
 
@@ -51,9 +54,9 @@ We can define a named method. Then we can pass that method as a parameter when w
 We can also use an anonymous function: `function(){}` as the parameter. It's anonymous because we create it without giving it a name. The code for the function will go inbetween the curly brackets. This is a common pattern, called a callback function.
 
 ```js
-    $("h1").click(function(){
-        alert("You clicked a header");
-    });
+$("h1").click(function(){
+    alert("You clicked a header");
+});
 ```
 Especially if that function is not going to be used anywhere else, this style of coding makes it easy to read off exactly what will happen when the click event is triggered.
 
@@ -81,10 +84,10 @@ $( document ).ready(function() {
 For Example:
 
 ```js
-  $("h1").click(function(){
-        alert("You clicked a header");
-        $(this).fadeOut();
-  });
+$("h1").click(function(){
+    alert("You clicked a header");
+    $(this).fadeOut();
+});
 ```
 
 Here, the $(this) refers to the header that was just clicked.  After the user click on the header, an alert will pop up and then that header will fade out.
