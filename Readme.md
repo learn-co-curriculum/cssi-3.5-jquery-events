@@ -81,6 +81,7 @@ For Example:
   $("h1").click(function(){
         alert("You clicked a header");
         $(this).fadeOut();
+  });
 ```
 Here, the $(this) refers to the header that was just clicked.  After the user click on the header, an alert will pop up and then that header will fade out.
 
