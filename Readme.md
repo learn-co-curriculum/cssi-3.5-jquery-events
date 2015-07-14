@@ -22,36 +22,38 @@ In JavaScript, events are user actions such as mouse clicks, key presses, or win
 
 JavaScript allows us to bind - or connect - functions to particular events. We create a function, and then tell the browser to run that function whenever that event happens. 
 
-jQuery lets us bind events with a concise, readable syntax. In the example below, we are writing code that will "listen" for a user's mouse click on any element with the "button" class.
+jQuery lets us bind events with a concise, readable syntax. In the example below, lets pretend we wanted to do something everytime the user clicked on a header.
 
 ```
-$('.button').on('click', action);
+$("h1").click(action);
+
 ```
-* `$('.button')` - the listener - uses the selector syntax `$()` to get all elements with the class "button"
-* `.on()` is the method that attaches an event handler to the selected elements
-* `click` is the event we are responding to
-* `action` is the event handler - or what we want our response to be
 
+* `$("h1")` - the *listener* - uses the selector syntax `$()` to get all the `<h1>` elements
+* `click` - the *event* we are responding to
+* `action` - the *handler* - or what we want our response to be
 
-Javascript gives us a few different ways to create the 'action'
+Javascript gives us a few different ways to create the 'action', by using a named method or using a callback function.
 
-We can define a named method, like we are used to, and pass that in:
+#### Named Methods as Event Handlers
+
+We can define a named method. Then we can pass that method as a parameter when we call the event:
+
 ```
-function tellUsWeClicked () {
-	console.log("You clicked the button");
+  function tellUsWeClicked () {
+	alert("You clicked a header");
 }
-$('.button').on('click',tellUsWeClicked);
+    $("h1").click(tellUsWeClicked);
+```    
+
+
+#### Callback Functions as Event Handlers
+
+We can also use an anonymous function: `function(){}` as the parameter. It's anonymous because we create it without giving it a name. The code for the function will go inbetween the curly brackets. This is a common pattern, called a callback function. 
 ```
-
-
-
-##Callback Functions
-
-We can also define an anonymous function as the parameter. It's anonymous because we create it without giving it a name. This is a common pattern, called a callback function. 
-```
-$('.button').on('click', function() {
-	console.log("You clicked the button");
-});
+    $("h1").click(function(){
+        alert("You clicked a header");
+    });
 ```
 Especially if that function is not going to be used anywhere else, this style of coding makes it easy to read off exactly what will happen when the click event is triggered.
 
@@ -73,35 +75,29 @@ $( document ).ready(function() {
 });
 ```
 ##$(this) inside Event callbacks
-If you want to do something to the element that fired an event (fade out the button you just clicked, for instance) $(this) allows you to easily access the element that fired the event.
+ $(this) allows you to easily access the element that fired the event.
 For Example:
 ```
-$(".the-button").click(function()
-{
-  alert("You clicked a button");
-
-  // I don't think they can handle more House Music
-  // Let's fade out the element they clicked on.
-
-  $(this).fadeOut();
-});
+  $("h1").click(function(){
+        alert("You clicked a header");
+        $(this).fadeOut();
 ```
-Here the $(this) refers to the button that we selected with the jQuery selector `$(".the-button"), since we are inside of its event handler.
+Here, the $(this) refers to the header that was just clicked.  After the user click on the header, an alert will pop up and then that header will fade out.
 
 ##Chaining Methods
 Up until this point we've been writing jQuery statements one at a time. However, there's a convenient way to do multiple things to an element without writing so much code - you can chain multiple commands together.
 
-For example, if we wanted an element to turn blue, and then move down and up we could write it this way:
+For example, if we wanted an element to turn blue, and then move up and down we could write it this way:
 ```
-$("#my_element").css("color", "blue");
-$("#my_element").slideDown(2000);
-$("#my_element").slideUp(2000);
+$(this).css("color", "blue");
+$(this).slideUp(2000);
+$(this).slideDown(2000);
 ```
 This works, but we're repeating the lookup for the HTML element with the ID of stuff multiple times. 
 
 Instead we can do this:
 ```
-$("#my_element").css("color", "blue").slideDown(2000).slideUp(2000);
+        $(this).css("color", "blue").slideUp(2000).slideDown(2000);
 ```
 Here, we've chained the methods by simply adding the next one to the end of the chain.
 
