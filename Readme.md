@@ -17,17 +17,17 @@ languages: javascript
 jQuery has event handlers that respond to user actions - like clicking or moving the mouse. This allows us to make all sorts of amazing behaviors and websites that respond naturally to user actions.
 
 
-##What are Events
-In javascript, Events are user actions such as mouse clicks, key presses, or window resizing. We can define code that will be run when those events happen.
+##JavaScript Events
+In JavaScript, events are user actions such as mouse clicks, key presses, or window resizing. We can define code that will be run when those events happen.
 
-Javascript allows us to bind - or connect - functions to particular events. We create a function, and then tell the browser to run that function whenever that event happens. 
+JavaScript allows us to bind - or connect - functions to particular events. We create a function, and then tell the browser to run that function whenever that event happens. 
 
-jQuery lets us bind events with a concise, readable syntax:
+jQuery lets us bind events with a concise, readable syntax. In the example below, we are writing code that will "listen" for a user's mouse click on any element with the "button" class.
 
 ```
 $('.button').on('click', action);
 ```
-* `$('.button')` uses the selector syntax `$()` to get all elements with the class "button"
+* `$('.button')` - the listener - uses the selector syntax `$()` to get all elements with the class "button"
 * `.on()` is the method that attaches an event handler to the selected elements
 * `click` is the event we are responding to
 * `action` is the event handler - or what we want our response to be
