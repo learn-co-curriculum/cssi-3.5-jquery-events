@@ -115,3 +115,5 @@ jQuery and other libraries allow you to do amazingly complex stuff with a simple
 Now it's time to explore events and event handlers! Try some of the jquery you've been learning to change elements and style when certain actions happen. [Here's a list](http://help.dottoro.com/larrqqck.php) of a ton of browser events that your code can listen for.
 
 Some of the most common are 'click', 'scroll', 'mouseenter' and 'mouseleave', 'focus', 'blur',  and 'keyup'. There are lots and lots of events - what events do popular websites listen for and handle?
+
+<a href='https://learn.co/lessons/cssi-3.5-jquery-events' data-visibility='hidden'>View this lesson on Learn.co</a>
