@@ -116,4 +116,4 @@ Now it's time to explore events and event handlers! Try some of the jquery you'v
 
 Some of the most common are 'click', 'scroll', 'mouseenter' and 'mouseleave', 'focus', 'blur',  and 'keyup'. There are lots and lots of events - what events do popular websites listen for and handle?
 
-<a href='https://learn.co/lessons/cssi-3.5-jquery-events' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/cssi-3.5-jquery-events' title='Events, Listeners, and Handlers in JQuery'>Events, Listeners, and Handlers in JQuery</a> on Learn.co and start learning to code for free.</p>
